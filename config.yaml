@@ -1,0 +1,14 @@
+appium:
+  server_url: "http://127.0.0.1:4723"
+
+android:
+  platform_name: "Android"
+  automation_name: "UiAutomator2"
+  device_name: "Android"
+  app_package: "com.duygiangdg.magiceraser"
+  no_reset: true
+  auto_grant_permissions: true
+
+timeouts:
+  implicit: 0
+  explicit: 10

@@ -1,12 +1,14 @@
 from appium import webdriver
-from core.driver.capabilities import get_android_options
 
-APPIUM_SERVER_URL = "http://127.0.0.1:4723"
+from core.driver.capabilities import get_android_options
+from core.util.config import Config
 
 def create_driver():
+    config = Config()
     options = get_android_options()
 
     return webdriver.Remote(
-        command_executor=APPIUM_SERVER_URL, 
-        options=options)
+        command_executor=config.appium_server_url, 
+        options=options    
+    )
 
