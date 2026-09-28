@@ -1,15 +1,12 @@
 from appium import webdriver
-from appium.options.android import UiAutomator2Options
+from core.driver.capabilities import get_android_options
 
 APPIUM_SERVER_URL = "http://127.0.0.1:4723"
 
 def create_driver():
-    options = UiAutomator2Options()
-    options.platform_name = "Android"
-    options.automation_name = "UiAutomator2"
-    options.app_package = "com.duygiangdg.magiceraser"
+    options = get_android_options()
 
-    driver = webdriver.Remote(
+    return webdriver.Remote(
         command_executor=APPIUM_SERVER_URL, 
         options=options)
-    return driver
+
