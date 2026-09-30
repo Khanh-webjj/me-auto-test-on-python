@@ -16,17 +16,17 @@ class Wait:
         self._wait = WebDriverWait(driver, timeout)
 
     def presence(self, locator):
-        return self.wait.until(
+        return self._wait.until(
             EC.presence_of_element_located(locator)
         )
 
     def visible(self, locator):
-        return self.wait.until(
+        return self._wait.until(
             EC.visibility_of_element_located(locator)
         )
 
     def invisible(self, locator):
-        return self.wait.until(
+        return self._wait.until(
             EC.invisibility_of_element_located(locator)
         )
 
