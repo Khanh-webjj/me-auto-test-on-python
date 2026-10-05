@@ -12,6 +12,10 @@ class BasePage:
     def click(self, locator):
         self.wait.clickable(locator).click()
 
+    def long_press(self, locator, duration=2):
+        element = self.wait.visible(locator)
+        self.driver.long_press(element, duration)
+
     def get_text(self, locator):
         return self.wait.visible(locator).text
 
