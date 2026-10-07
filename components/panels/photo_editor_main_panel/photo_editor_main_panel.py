@@ -1,15 +1,17 @@
 from photo_editor_main_panel.photo_editor_main_panel_locators import PhotoEditorMainPanelLocators
-from selenium.webdriver.common.action_chains import ActionChains
+from core.util.gesture import Gesture
 
 from components.panels.panel import Panel
 
 class PhotoEditorMainPanel(Panel):
     def __init__(self, driver):
         self.driver = driver
+        self.gesture = Gesture(self.driver)
 
     def is_displayed(self):
         return self.driver.is_displayed(PhotoEditorMainPanelLocators.root())   
 
+    # top bar button
     def tap_back_button(self):
         self.driver.click(PhotoEditorMainPanelLocators.back_button())
 
@@ -30,6 +32,7 @@ class PhotoEditorMainPanel(Panel):
     def tap_save_button(self):
         self.driver.click(PhotoEditorMainPanelLocators.save_button())
 
+    # main panel button
     def tap_layer_button(self):
         self.driver.click(PhotoEditorMainPanelLocators.layer_button())
 
@@ -120,6 +123,24 @@ class PhotoEditorMainPanel(Panel):
         else:
             raise Exception("Brushes button is not displayed.")
     
-    def scroll_to_button(self, button_locator):
-        button = self.driver.find_element(button_locator)
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", button)
+    def scroll_to_button(self, button_locator, max_swipes = 10):
+        
+        view = self.driver.find_element(PhotoEditorMainPanelLocators.horizontal_scroll_view())
+
+        rect = view.rect
+
+        center_y = rect['y'] + rect['height'] / 2
+        start_x = rect['x'] + rect['width'] * 0.8
+        end_x = rect['x'] + rect['width'] * 0.2
+
+        for _ in range(max_swipes):
+            button = self.driver.find_element(button_locator)
+
+            if button:
+                return button
+
+            self.gesture.swipe(start_x, center_y, end_x, center_y, duration=500)
+
+        raise Exception(f"Button with locator {button_locator} not found after {max_swipes} swipes.")
+        
+    
