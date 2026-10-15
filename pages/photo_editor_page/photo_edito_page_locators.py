@@ -3,7 +3,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from core.util.config import Config
 
 
-class PhotoEditorMainPanelLocators:
+class PhotoEditorPageLocators:
     app_package = Config.app_package()
 
     ROOT_ID = f"{app_package}:id/photo_editor_root"
@@ -36,76 +36,76 @@ class PhotoEditorMainPanelLocators:
 
     @staticmethod
     def root():
-        return AppiumBy.ID, PhotoEditorMainPanelLocators.ROOT_ID
+        return AppiumBy.ID, PhotoEditorPageLocators.ROOT_ID
 
     @staticmethod
     def main_panel():
-        return AppiumBy.ID, PhotoEditorMainPanelLocators.MAIN_PANEL_ID
+        return AppiumBy.ID, PhotoEditorPageLocators.MAIN_PANEL_ID
 
     @staticmethod  
     def main_panel_horizontal_scroll_view():
-            return AppiumBy.ID, PhotoEditorMainPanelLocators.MAIN_PANEL_HORIZONTAL_SCROLL_VIEW_XPATH
+            return AppiumBy.ID, PhotoEditorPageLocators.MAIN_PANEL_HORIZONTAL_SCROLL_VIEW_XPATH
 
     @staticmethod
     def layer_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.LAYER_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.LAYER_BUTTON_XPATH
 
     @staticmethod
     def insert_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.INSERT_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.INSERT_BUTTON_XPATH
 
     @staticmethod
     def crop_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.CROP_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.CROP_BUTTON_XPATH
 
     @staticmethod
     def cleanup_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.CLEANUP_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.CLEANUP_BUTTON_XPATH
 
     @staticmethod
     def reshape_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.RESHAPE_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.RESHAPE_BUTTON_XPATH
 
     @staticmethod
     def ai_enhance_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.AI_ENHANCE_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.AI_ENHANCE_BUTTON_XPATH
 
     @staticmethod
     def ai_expand_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.AI_EXPAND_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.AI_EXPAND_BUTTON_XPATH
 
     @staticmethod
     def adjust_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.ADJUST_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.ADJUST_BUTTON_XPATH
 
     @staticmethod
     def partial_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.PARTIAL_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.PARTIAL_BUTTON_XPATH
 
     @staticmethod
     def hsl_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.HSL_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.HSL_BUTTON_XPATH
 
     @staticmethod
     def wb_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.WB_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.WB_BUTTON_XPATH
 
     @staticmethod
     def filter_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.FILTER_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.FILTER_BUTTON_XPATH
 
     @staticmethod
     def blur_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.BLUR_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.BLUR_BUTTON_XPATH
 
     @staticmethod
     def texture_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.TEXTURE_BUTTON_XPATH
+        return AppiumBy.XPATH, PhotoEditorPageLocators.TEXTURE_BUTTON_XPATH
 
     @staticmethod
     def frame_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.FRAME_BUTTON_XPATH  
+        return AppiumBy.XPATH, PhotoEditorPageLocators.FRAME_BUTTON_XPATH  
 
     @staticmethod
     def brushes_button():
-        return AppiumBy.XPATH, PhotoEditorMainPanelLocators.BRUSHES_BUTTON_XPATH    
+        return AppiumBy.XPATH, PhotoEditorPageLocators.BRUSHES_BUTTON_XPATH    
