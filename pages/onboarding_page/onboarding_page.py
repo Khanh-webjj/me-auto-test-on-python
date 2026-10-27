@@ -12,6 +12,9 @@ class OnboardingPage(BasePage):
     def tap_continue_button(self):
         super().click(OnboardingPageLocators.continue_button())
 
-    
+    def get_text_of_feature_title(self):
+        return super().get_attribute(OnboardingPageLocators.feature_title, 'text')
 
-    
+
+    def get_text_of_feature_description(self):
+        return super().get_attribute(OnboardingPageLocators.feature_discribe, 'text')
