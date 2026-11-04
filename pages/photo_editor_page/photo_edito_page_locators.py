@@ -4,7 +4,7 @@ from core.util.config import Config
 
 
 class PhotoEditorPageLocators:
-    app_package = Config.app_package()
+    app_package = Config().app_package
 
     ROOT_ID = f"{app_package}:id/photo_editor_root"
 

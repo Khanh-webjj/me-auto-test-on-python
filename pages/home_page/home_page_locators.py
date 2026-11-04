@@ -1,10 +1,9 @@
 from appium.webdriver.common.appiumby import AppiumBy
-from pygments.token import String
-from pytest import Config
+from core.util.config import Config
 
 
 class HomePageLocators:
-    app_package = Config.app_package()
+    app_package = Config().app_package
 
     __ROOT_ID = f"{app_package}:id/sv_fragment"
     __MENU_BUTTON_ID = f"{app_package}:id/iv_menu"

@@ -16,10 +16,10 @@ class Config:
                 f"Config file not found at {CONFIG_PATH}"
             )
 
-        with open(CONFIG_PATH, "r") as f:
-            return yaml.safe_load(f)
+        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+            config = yaml.safe_load(f)
 
-        if not config:
+        if not isinstance(config, dict) or not config:
             raise ValueError("Config file is empty or invalid")
 
         return config
@@ -35,34 +35,34 @@ class Config:
         
         return value
 
-    @property
+    @property 
     def appium_server_url(self):
         return self.get("appium", "server_url")
 
-    @property
+    @property 
     def platform_name(self):
         return self.get("android", "platform_name")
 
-    @property
+    @property 
     def automation_name(self):
         return self.get("android", "automation_name")
 
-    @property
+    @property 
     def device_name(self):
         return self.get("android", "device_name")
 
-    @property
+    @property 
     def app_package(self):
         return self.get("android", "app_package")
 
-    @property
+    @property 
     def no_reset(self):
         return self.get("android", "no_reset")
 
-    @property
+    @property 
     def auto_grant_permissions(self):
         return self.get("android", "auto_grant_permissions")
 
-    @property
+    @property 
     def explicit_wait(self):
         return self.get("timeouts", "explicit")

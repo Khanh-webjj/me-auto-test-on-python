@@ -3,7 +3,7 @@ from core.util.config import Config
 
 
 class BrushPanelLocators:
-    app_package = Config.app_package()
+    app_package = Config().app_package
 
     ROOT_XPATH = f"//android.view.ViewGroup[@resource-id='{app_package}:id/view_image_panel' and .//android.widget.TextView[@text='Brush']]"
     DONE_BUTTON_XPATH = f"{ROOT_XPATH}//android.widget.Button[@resource-id='{app_package}:id/btn_done']"

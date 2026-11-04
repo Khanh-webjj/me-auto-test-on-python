@@ -1,8 +1,9 @@
 from appium.webdriver.common.appiumby import AppiumBy
+from core.util.config import Config
 
 
 class OnboardingPageLocators:
-    app_package = "com.duygiangdg.magiceraser"
+    app_package = Config().app_package
 
     __ROOT_ID__ = f"{app_package}:id/root"
     __CONTINUE_BUTTON_ID__ = f"{app_package}:id/tv_onboard_continue"

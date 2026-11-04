@@ -6,7 +6,7 @@ android:
   automation_name: "UiAutomator2"
   device_name: "Android"
   app_package: "com.duygiangdg.magiceraser"
-  no_reset: true
+  no_reset: false
   auto_grant_permissions: true
 
 timeouts:

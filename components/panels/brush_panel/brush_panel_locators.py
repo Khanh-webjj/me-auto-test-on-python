@@ -4,7 +4,7 @@ from core.util.config import Config
 
 
 class BrushPanelLocators:
-    app_package = Config.app_package()
+    app_package = Config().app_package
 
     ROOT_ID = f"{app_package}:id/panel_brush"
     DONE_BUTTON_ID = f"{app_package}:id/tv_panel_done"
