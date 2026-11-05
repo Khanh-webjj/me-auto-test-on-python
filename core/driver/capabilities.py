@@ -11,6 +11,9 @@ def get_android_options():
     options.automation_name = config.automation_name
     options.device_name = config.device_name
     options.app_package = config.app_package
+    options.set_capability(
+        "appium:appWaitActivity", config.appium_app_wait_activity
+    )
     
     options.no_reset = config.no_reset
     options.auto_grant_permissions = config.auto_grant_permissions

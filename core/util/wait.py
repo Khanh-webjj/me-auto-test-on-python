@@ -9,11 +9,16 @@ class Wait:
         self.driver = driver
 
         if timeout is None:
-            timeout = Config().get("wait", "timeout")
+            timeout = Config().explicit_wait
 
         self.timeout = timeout
 
         self._wait = WebDriverWait(driver, timeout)
+
+    def clickable(self, locator):
+        return self._wait.until(
+            EC.element_to_be_clickable(locator)
+        )
 
     def presence(self, locator):
         return self._wait.until(

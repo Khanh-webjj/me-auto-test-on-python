@@ -39,6 +39,10 @@ class Config:
     def appium_server_url(self):
         return self.get("appium", "server_url")
 
+    @property
+    def appium_app_wait_activity(self):
+        return self.get("android", "appium:appWaitActivity")
+
     @property 
     def platform_name(self):
         return self.get("android", "platform_name")
